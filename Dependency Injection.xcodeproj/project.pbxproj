@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		6E2B84B726285D9B007682CB /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84B626285D9B007682CB /* Fruit.swift */; };
 		6E2B84C826285EB3007682CB /* FruitBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84C726285EB3007682CB /* FruitBasket.swift */; };
 		6E2B84CD26286C3C007682CB /* FruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84CC26286C3C007682CB /* FruitService.swift */; };
+		6E9F1A2B2628883900B22826 /* FruitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A2A2628883900B22826 /* FruitRepository.swift */; };
+		6E9F1A3726288A9400B22826 /* GetFruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3626288A9400B22826 /* GetFruitsUseCase.swift */; };
+		6E9F1A3C26288AE600B22826 /* BuyFruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3B26288AE600B22826 /* BuyFruitsUseCase.swift */; };
+		6E9F1A4126288BFA00B22826 /* FruitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A4026288BFA00B22826 /* FruitsVM.swift */; };
+		6E9F1A4726288C1400B22826 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A4626288C1400B22826 /* ViewModelType.swift */; };
 		8848CEE922B9985C0A3F5710 /* Pods_Dependency_InjectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6003550025AE47F6EBD3B3 /* Pods_Dependency_InjectionTests.framework */; };
 		DCABD4E3867335384C505D9E /* Pods_Dependency_Injection_Dependency_InjectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C809232352EAFAE2AEF1FAC /* Pods_Dependency_Injection_Dependency_InjectionUITests.framework */; };
 		FCE8354D9678E8C0B7105080 /* Pods_Dependency_Injection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01D24DE8D76E1B65393DA6 /* Pods_Dependency_Injection.framework */; };
@@ -54,6 +59,11 @@
 		6E2B84B626285D9B007682CB /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		6E2B84C726285EB3007682CB /* FruitBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitBasket.swift; sourceTree = "<group>"; };
 		6E2B84CC26286C3C007682CB /* FruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitService.swift; sourceTree = "<group>"; };
+		6E9F1A2A2628883900B22826 /* FruitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitRepository.swift; sourceTree = "<group>"; };
+		6E9F1A3626288A9400B22826 /* GetFruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFruitsUseCase.swift; sourceTree = "<group>"; };
+		6E9F1A3B26288AE600B22826 /* BuyFruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyFruitsUseCase.swift; sourceTree = "<group>"; };
+		6E9F1A4026288BFA00B22826 /* FruitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsVM.swift; sourceTree = "<group>"; };
+		6E9F1A4626288C1400B22826 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		6FD501C920CA5C189051F463 /* Pods-Dependency Injection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dependency Injection.debug.xcconfig"; path = "Target Support Files/Pods-Dependency Injection/Pods-Dependency Injection.debug.xcconfig"; sourceTree = "<group>"; };
 		870FC42C4ECE0B4B7FA365FB /* Pods-Dependency InjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dependency InjectionTests.release.xcconfig"; path = "Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D6003550025AE47F6EBD3B3 /* Pods_Dependency_InjectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dependency_InjectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +111,6 @@
 				99DC2D54725AB6CA0560680E /* Pods-Dependency InjectionTests.debug.xcconfig */,
 				870FC42C4ECE0B4B7FA365FB /* Pods-Dependency InjectionTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +139,7 @@
 		6E2B847326285C31007682CB /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
+				6E9F1A4526288C0900B22826 /* Protocols */,
 				6E2B84B026285C99007682CB /* Data */,
 				6E2B84B126285C9D007682CB /* Domain */,
 				6E2B84B226285CA4007682CB /* Presentation */,
@@ -171,6 +181,7 @@
 		6E2B84B126285C9D007682CB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6E9F1A3526288A8800B22826 /* UseCase */,
 				6E2B84BE26285DF3007682CB /* Model */,
 				6E2B84B526285D8F007682CB /* Enum */,
 			);
@@ -180,6 +191,7 @@
 		6E2B84B226285CA4007682CB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				6E9F1A4026288BFA00B22826 /* FruitsVM.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 		6E2B84B426285CB1007682CB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				6E9F1A2A2628883900B22826 /* FruitRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -213,6 +226,23 @@
 				6E2B84C726285EB3007682CB /* FruitBasket.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6E9F1A3526288A8800B22826 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6E9F1A3626288A9400B22826 /* GetFruitsUseCase.swift */,
+				6E9F1A3B26288AE600B22826 /* BuyFruitsUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		6E9F1A4526288C0900B22826 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E9F1A4626288C1400B22826 /* ViewModelType.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EB856468E7831A4E55900568 /* Frameworks */ = {
@@ -481,9 +511,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E2B84C826285EB3007682CB /* FruitBasket.swift in Sources */,
+				6E9F1A4126288BFA00B22826 /* FruitsVM.swift in Sources */,
 				6E2B84B726285D9B007682CB /* Fruit.swift in Sources */,
 				6E2B847526285C31007682CB /* AppDelegate.swift in Sources */,
+				6E9F1A3C26288AE600B22826 /* BuyFruitsUseCase.swift in Sources */,
+				6E9F1A2B2628883900B22826 /* FruitRepository.swift in Sources */,
 				6E2B84CD26286C3C007682CB /* FruitService.swift in Sources */,
+				6E9F1A3726288A9400B22826 /* GetFruitsUseCase.swift in Sources */,
+				6E9F1A4726288C1400B22826 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
