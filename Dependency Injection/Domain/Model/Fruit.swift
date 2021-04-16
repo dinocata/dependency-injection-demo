@@ -5,7 +5,24 @@ enum Fruit: String, CaseIterable {
     case banana
 }
 
-extension Fruit {
+extension Fruit: Product {
+    
+    var id: String {
+        self.rawValue
+    }
+    
+    var name: String {
+        return self.rawValue.capitalized
+    }
+    
+    var description: String {
+        switch self {
+        case .apple: return "Shiny apple"
+        case .orange: return "Juicy orange"
+        case .strawberry: return "Sweet strawberry"
+        case .banana: return "Tasty banana"
+        }
+    }
     
     var pricePerKg: Float {
         switch self {
@@ -22,15 +39,6 @@ extension Fruit {
         case .orange: return 120
         case .strawberry: return 30
         case .banana: return 140
-        }
-    }
-    
-    var description: String {
-        switch self {
-        case .apple: return "Shiny apple"
-        case .orange: return "Juicy orange"
-        case .strawberry: return "Sweet strawberry"
-        case .banana: return "Tasty banana"
         }
     }
 }
