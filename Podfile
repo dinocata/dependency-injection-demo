@@ -9,6 +9,7 @@ target 'Dependency Injection' do
   
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
+  pod 'Swinject'
   
   target 'Dependency InjectionTests' do
     inherit! :search_paths

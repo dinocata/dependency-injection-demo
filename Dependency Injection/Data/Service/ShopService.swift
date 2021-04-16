@@ -15,3 +15,11 @@ final class ShopServiceImpl: ShopService {
         return .just(true)
     }
 }
+
+extension ShopServiceImpl {
+    static let shared: ShopService = ShopServiceImpl()
+}
+
+extension ShopRepositoryImpl {
+    static let shared: ShopRepository = ShopRepositoryImpl(service: ShopServiceImpl.shared)
+}

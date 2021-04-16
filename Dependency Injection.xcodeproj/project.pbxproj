@@ -16,6 +16,7 @@
 		6E2B84B726285D9B007682CB /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84B626285D9B007682CB /* Fruit.swift */; };
 		6E2B84C826285EB3007682CB /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84C726285EB3007682CB /* ShoppingCart.swift */; };
 		6E2B84CD26286C3C007682CB /* ShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B84CC26286C3C007682CB /* ShopService.swift */; };
+		6E54EA472629AD5100773191 /* InstanceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E54EA462629AD5100773191 /* InstanceContainer.swift */; };
 		6E9F1A2B2628883900B22826 /* ShopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A2A2628883900B22826 /* ShopRepository.swift */; };
 		6E9F1A3726288A9400B22826 /* GetProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3626288A9400B22826 /* GetProductsUseCase.swift */; };
 		6E9F1A3C26288AE600B22826 /* PurchaseProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3B26288AE600B22826 /* PurchaseProductsUseCase.swift */; };
@@ -62,6 +63,7 @@
 		6E2B84B626285D9B007682CB /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		6E2B84C726285EB3007682CB /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		6E2B84CC26286C3C007682CB /* ShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopService.swift; sourceTree = "<group>"; };
+		6E54EA462629AD5100773191 /* InstanceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceContainer.swift; sourceTree = "<group>"; };
 		6E9F1A2A2628883900B22826 /* ShopRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRepository.swift; sourceTree = "<group>"; };
 		6E9F1A3626288A9400B22826 /* GetProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductsUseCase.swift; sourceTree = "<group>"; };
 		6E9F1A3B26288AE600B22826 /* PurchaseProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProductsUseCase.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		6E2B847326285C31007682CB /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
+				6E54EA452629AD4200773191 /* DI */,
 				6E9F1A4526288C0900B22826 /* Protocols */,
 				6E2B84B026285C99007682CB /* Data */,
 				6E2B84B126285C9D007682CB /* Domain */,
@@ -225,6 +228,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6E54EA452629AD4200773191 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6E54EA462629AD5100773191 /* InstanceContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		6E9F1A3526288A8800B22826 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +275,7 @@
 				6E2B846D26285C30007682CB /* Sources */,
 				6E2B846E26285C30007682CB /* Frameworks */,
 				6E2B846F26285C30007682CB /* Resources */,
-				4D694CEF6BB74A03235B99D8 /* [CP] Embed Pods Frameworks */,
+				51A84FA291638AB93D4A974B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,7 +294,7 @@
 				6E2B848326285C31007682CB /* Sources */,
 				6E2B848426285C31007682CB /* Frameworks */,
 				6E2B848526285C31007682CB /* Resources */,
-				CAB588C44E6D8632C1062392 /* [CP] Embed Pods Frameworks */,
+				517A16B15F7A45BE18A7524D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,7 +314,7 @@
 				6E2B848E26285C31007682CB /* Sources */,
 				6E2B848F26285C31007682CB /* Frameworks */,
 				6E2B849026285C31007682CB /* Resources */,
-				F6851E1E9E46201A1B5BBCB2 /* [CP] Embed Pods Frameworks */,
+				07CB164960C7CB0EA097F265 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,7 +417,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4D694CEF6BB74A03235B99D8 /* [CP] Embed Pods Frameworks */ = {
+		07CB164960C7CB0EA097F265 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		517A16B15F7A45BE18A7524D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51A84FA291638AB93D4A974B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,40 +512,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CAB588C44E6D8632C1062392 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dependency InjectionTests/Pods-Dependency InjectionTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6851E1E9E46201A1B5BBCB2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dependency Injection-Dependency InjectionUITests/Pods-Dependency Injection-Dependency InjectionUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -517,6 +528,7 @@
 				6E2B84CD26286C3C007682CB /* ShopService.swift in Sources */,
 				6E268B9926298BA000B46E3B /* Product.swift in Sources */,
 				6E9F1A3726288A9400B22826 /* GetProductsUseCase.swift in Sources */,
+				6E54EA472629AD5100773191 /* InstanceContainer.swift in Sources */,
 				6E9F1A4726288C1400B22826 /* ViewModelType.swift in Sources */,
 				6EB784D226299A690059E093 /* ShopViewMapper.swift in Sources */,
 			);
