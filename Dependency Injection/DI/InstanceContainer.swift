@@ -10,7 +10,7 @@ enum SingletonContainer {
         }
         
         container.register(ShopRepository.self) {
-            ShopRepositoryImpl(service: $0.resolve(ShopService.self)!)
+            ShopRepositoryImpl(service: $0.resolve())
         }
         
         return container
@@ -23,11 +23,11 @@ enum InstanceContainer {
         let container = Container(parent: SingletonContainer.instance, defaultObjectScope: .transient)
         
         container.register(GetProductsUseCase.self) {
-            GetProductsUseCaseImpl(repository: $0.resolve(ShopRepository.self)!)
+            GetProductsUseCaseImpl(repository: $0.resolve())
         }
         
         container.register(PurchaseProductsUseCase.self) {
-            PurchaseProductsUseCaseImpl(repository: $0.resolve(ShopRepository.self)!)
+            PurchaseProductsUseCaseImpl(repository: $0.resolve())
         }
         
         container.register(ShopViewMapper.self) { _ in
@@ -35,9 +35,9 @@ enum InstanceContainer {
         }
         
         container.register(ShopVM.self) {
-            ShopVM(getProductsUseCase: $0.resolve(GetProductsUseCase.self)!,
-                   purchaseProductsUseCase: $0.resolve(PurchaseProductsUseCase.self)!,
-                   mapper: $0.resolve(ShopViewMapper.self)!)
+            ShopVM(getProductsUseCase: $0.resolve(),
+                   purchaseProductsUseCase: $0.resolve(),
+                   mapper: $0.resolve())
         }
         
         return container

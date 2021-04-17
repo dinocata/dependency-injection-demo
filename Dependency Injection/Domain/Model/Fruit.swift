@@ -35,10 +35,10 @@ extension Fruit: Product {
     
     var averageWeight: Float {
         switch self {
-        case .apple: return 100
-        case .orange: return 120
-        case .strawberry: return 30
-        case .banana: return 140
+        case .apple: return 0.100
+        case .orange: return 0.120
+        case .strawberry: return 0.30
+        case .banana: return 0.140
         }
     }
 }

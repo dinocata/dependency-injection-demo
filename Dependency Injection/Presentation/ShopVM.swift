@@ -1,6 +1,6 @@
 import RxCocoa
 
-class ShopVM {
+class ShopVM: Injectable {
     
     // Dependencies
     private let getProductsUseCase: GetProductsUseCase
@@ -32,7 +32,7 @@ extension ShopVM: ViewModelType {
     struct Output {
         let productList: Driver<[Product]>
         let selectedProducts: Driver<SelectedProducts>
-        let purchaseResult: Driver<Bool>
+        let totalPrice: Driver<String>
     }
     
     func transform(input: Input) -> Output {
@@ -58,12 +58,26 @@ extension ShopVM: ViewModelType {
             .asObservable()
             .map(mapper.mapShoppingCart)
             .flatMapLatest(purchaseProductsUseCase.execute)
-            .asDriver(onErrorJustReturn: false)
+            .map { [weak self] success -> SelectedProducts in
+                guard let self = self else {
+                    return [:]
+                }
+                if success {
+                    self.selectedProducts.removeAll()
+                }
+                return self.selectedProducts
+            }
+            .asDriver(onErrorJustReturn: [:])
+        
+        let selectedProductsMerge = Driver.merge(selectedProducts, purchaseResult)
+        
+        let totalPrice = selectedProductsMerge
+            .map(mapper.mapTotalPrice)
         
         return .init(
             productList: productList,
-            selectedProducts: selectedProducts,
-            purchaseResult: purchaseResult
+            selectedProducts: selectedProductsMerge,
+            totalPrice: totalPrice
         )
     }
 }

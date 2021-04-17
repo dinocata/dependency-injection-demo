@@ -10,13 +10,13 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let shopViewModel = InstanceContainer.instance.resolve(ShopVM.self)!
-        print(shopViewModel)
+        self.window?.rootViewController = UINavigationController(rootViewController: ShopVC())
+        self.window?.makeKeyAndVisible()
         
         return true
     }

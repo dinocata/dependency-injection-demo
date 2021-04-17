@@ -1,6 +1,6 @@
 import RxSwift
 
-protocol ShopRepository {
+protocol ShopRepository: Injectable {
     func getProducts() -> Single<[Product]>
     func purchaseProducts(from shoppingCart: ShoppingCart) -> Single<Bool>
 }

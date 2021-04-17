@@ -1,6 +1,6 @@
 import RxSwift
 
-protocol GetProductsUseCase {
+protocol GetProductsUseCase: Injectable {
     func execute() -> Single<[Product]>
 }
 

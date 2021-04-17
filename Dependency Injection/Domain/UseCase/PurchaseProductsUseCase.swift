@@ -1,6 +1,6 @@
 import RxSwift
 
-protocol PurchaseProductsUseCase {
+protocol PurchaseProductsUseCase: Injectable {
     func execute(shoppingCart: ShoppingCart) -> Single<Bool>
 }
 

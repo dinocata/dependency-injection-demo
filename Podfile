@@ -9,6 +9,7 @@ target 'Dependency Injection' do
   
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
+  pod 'SnapKit', '~> 5.0.0'
   pod 'Swinject'
   
   target 'Dependency InjectionTests' do
