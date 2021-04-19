@@ -550,7 +550,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n#git update-index --assume-unchanged Generated/*.swift\n";
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\ngit update-index --assume-unchanged Generated/*.swift\n";
 		};
 		75C8A5AA4CC8227EF13AE47C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
