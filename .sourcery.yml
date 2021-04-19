@@ -1,0 +1,6 @@
+sources:
+  - Dependency Injection
+templates:
+  - Templates
+output:
+  path: Generated

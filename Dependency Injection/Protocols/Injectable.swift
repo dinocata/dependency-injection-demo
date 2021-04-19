@@ -1,1 +1,3 @@
 protocol Injectable {}
+
+protocol Singleton {}

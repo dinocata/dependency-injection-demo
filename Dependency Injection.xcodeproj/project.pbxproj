@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1F6C2B262D9C3F0072B35F /* InstanceContainer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F6C2A262D9C3F0072B35F /* InstanceContainer.generated.swift */; };
 		6E2B847526285C31007682CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B847426285C31007682CB /* AppDelegate.swift */; };
 		6E2B847E26285C31007682CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B847D26285C31007682CB /* Assets.xcassets */; };
 		6E2B848126285C31007682CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B847F26285C31007682CB /* LaunchScreen.storyboard */; };
@@ -24,7 +25,6 @@
 		6E3D9B52262AFA50003258D0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D9B51262AFA50003258D0 /* Reusable.swift */; };
 		6E3D9B57262AFA83003258D0 /* UITableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D9B56262AFA83003258D0 /* UITableViewCellExt.swift */; };
 		6E3D9B5C262AFA9C003258D0 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D9B5B262AFA9C003258D0 /* UITableViewExt.swift */; };
-		6E54EA472629AD5100773191 /* InstanceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E54EA462629AD5100773191 /* InstanceContainer.swift */; };
 		6E9F1A2B2628883900B22826 /* ShopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A2A2628883900B22826 /* ShopRepository.swift */; };
 		6E9F1A3726288A9400B22826 /* GetProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3626288A9400B22826 /* GetProductsUseCase.swift */; };
 		6E9F1A3C26288AE600B22826 /* PurchaseProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1A3B26288AE600B22826 /* PurchaseProductsUseCase.swift */; };
@@ -57,6 +57,7 @@
 /* Begin PBXFileReference section */
 		2B01D24DE8D76E1B65393DA6 /* Pods_Dependency_Injection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dependency_Injection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C809232352EAFAE2AEF1FAC /* Pods_Dependency_Injection_Dependency_InjectionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dependency_Injection_Dependency_InjectionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1F6C2A262D9C3F0072B35F /* InstanceContainer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceContainer.generated.swift; sourceTree = "<group>"; };
 		6E2B847126285C31007682CB /* Dependency Injection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dependency Injection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2B847426285C31007682CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E2B847D26285C31007682CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		6E3D9B51262AFA50003258D0 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		6E3D9B56262AFA83003258D0 /* UITableViewCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExt.swift; sourceTree = "<group>"; };
 		6E3D9B5B262AFA9C003258D0 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
-		6E54EA462629AD5100773191 /* InstanceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceContainer.swift; sourceTree = "<group>"; };
 		6E9F1A2A2628883900B22826 /* ShopRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRepository.swift; sourceTree = "<group>"; };
 		6E9F1A3626288A9400B22826 /* GetProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductsUseCase.swift; sourceTree = "<group>"; };
 		6E9F1A3B26288AE600B22826 /* PurchaseProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProductsUseCase.swift; sourceTree = "<group>"; };
@@ -138,6 +138,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6E1F6C29262D9C3F0072B35F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				6E1F6C2A262D9C3F0072B35F /* InstanceContainer.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		6E2B846826285C30007682CB = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +155,7 @@
 				6E2B847226285C31007682CB /* Products */,
 				2B50635E951FDA692A657361 /* Pods */,
 				EB856468E7831A4E55900568 /* Frameworks */,
+				6E1F6C29262D9C3F0072B35F /* Generated */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,7 +172,6 @@
 		6E2B847326285C31007682CB /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
-				6E54EA452629AD4200773191 /* DI */,
 				6E3D9B31262AF44B003258D0 /* Base */,
 				6E9F1A4526288C0900B22826 /* Protocols */,
 				6E3D9B23262AF071003258D0 /* Extensions */,
@@ -269,14 +277,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		6E54EA452629AD4200773191 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				6E54EA462629AD5100773191 /* InstanceContainer.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		6E9F1A3526288A8800B22826 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +315,7 @@
 			buildConfigurationList = 6E2B849B26285C31007682CB /* Build configuration list for PBXNativeTarget "Dependency Injection" */;
 			buildPhases = (
 				6469072DD57FB09838F4A0B5 /* [CP] Check Pods Manifest.lock */,
+				6E7BA6E6262D96D000D3C5BD /* Sourcery */,
 				6E2B846D26285C30007682CB /* Sources */,
 				6E2B846E26285C30007682CB /* Frameworks */,
 				6E2B846F26285C30007682CB /* Resources */,
@@ -533,6 +534,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6E7BA6E6262D96D000D3C5BD /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n#git update-index --assume-unchanged Generated/*.swift\n";
+		};
 		75C8A5AA4CC8227EF13AE47C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,6 +586,7 @@
 				6E9F1A4126288BFA00B22826 /* ShopVM.swift in Sources */,
 				6E2B84B726285D9B007682CB /* Product.swift in Sources */,
 				6E2B847526285C31007682CB /* AppDelegate.swift in Sources */,
+				6E1F6C2B262D9C3F0072B35F /* InstanceContainer.generated.swift in Sources */,
 				6E9F1A3C26288AE600B22826 /* PurchaseProductsUseCase.swift in Sources */,
 				6E9F1A2B2628883900B22826 /* ShopRepository.swift in Sources */,
 				6E3D9B4D262AF7F7003258D0 /* Configurable.swift in Sources */,
@@ -576,7 +596,6 @@
 				6E9F1A3726288A9400B22826 /* GetProductsUseCase.swift in Sources */,
 				6E3D9B33262AF45F003258D0 /* MVVMController.swift in Sources */,
 				6E3D9B25262AF07E003258D0 /* ResolverExt.swift in Sources */,
-				6E54EA472629AD5100773191 /* InstanceContainer.swift in Sources */,
 				6E3D9B1C262AF041003258D0 /* ShopVC.swift in Sources */,
 				6E9F1A4726288C1400B22826 /* ViewModelType.swift in Sources */,
 				6E3D9B2D262AF0AC003258D0 /* Injectable.swift in Sources */,

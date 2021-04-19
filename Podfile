@@ -11,6 +11,7 @@ target 'Dependency Injection' do
   pod 'RxCocoa', '6.1.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Swinject'
+  pod 'Sourcery'
   
   target 'Dependency InjectionTests' do
     inherit! :search_paths

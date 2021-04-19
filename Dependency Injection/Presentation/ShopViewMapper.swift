@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ShopViewMapper {
+protocol ShopViewMapper: Injectable {
     func mapShoppingCart(from selectedProducts: ShopVM.SelectedProducts) -> ShoppingCart
     func mapTotalPrice(from selectedProducts: ShopVM.SelectedProducts) -> String
 }

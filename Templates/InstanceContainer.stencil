@@ -1,0 +1,72 @@
+import Swinject
+
+{% macro injectType type %}
+    {% if type.initializers.count == 0 %}
+            {{ type.name }}()
+    {% else %}
+        {% for initializer in type.initializers %}
+            {{ type.name }}(
+                {% for parameter in initializer.parameters %}
+                    {% if parameter.type.based.Injectable %}
+                {{ parameter.name }}: resolver.resolve(){% if not forloop.last%}, {% endif %}
+                    {% else %}
+                #error("Cannot inject non-injectable dependency '{{ parameter.name }}' of type '{{ parameter.unwrappedTypeName }}'")
+                    {% endif %}
+                {% endfor %}
+            )
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro injectProtocol type %}
+        // MARK: {{ type.name }}
+        container.register({{ type.name }}.self) { resolver in
+    {% for impl in types.implementing[type.name] where impl.name|contains:"Impl" %}
+        {% call injectType impl %}
+    {% endfor %}
+        }
+{% endmacro %}
+
+{% macro injectClass type %}
+        // MARK: {{ type.name }}
+        container.register({{ type.name }}.self) { resolver in
+    {% call injectType type %}
+        }
+{% endmacro %}
+
+/// Provides new instances
+enum SingletonContainer {
+
+    static let instance: Container = {
+        let container = Container(defaultObjectScope: .container)
+
+{% for type in types.protocols where type.based.Injectable and type.based.Singleton %}
+    {% call injectProtocol type %}
+
+{% endfor %}
+        return container
+    }()
+}
+
+/// Provides new instances
+enum InstanceContainer {
+
+    static let instance: Container = {
+        let container = Container(parent: SingletonContainer.instance, defaultObjectScope: .transient)
+
+{% for type in types.protocols where type.based.Injectable and not type.based.Singleton %}
+        {% call injectProtocol type %}
+
+{% endfor %}
+
+{% for type in types.classes where type.based.Injectable and not type.implements.Singleton %}
+    {% for inheritedType in type.inheritedTypes %}
+        {% if inheritedType == "Injectable" %}
+            {% call injectClass type %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+        return container
+    }()
+}
