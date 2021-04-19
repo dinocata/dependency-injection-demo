@@ -8,7 +8,7 @@ class ShopVM: Injectable {
     private let mapper: ShopViewMapper
     
     // Stored data
-    private var selectedProducts: SelectedProducts = [:]
+    private var selectedProducts: SelectedProducts = []
     
     init(getProductsUseCase: GetProductsUseCase,
          purchaseProductsUseCase: PurchaseProductsUseCase,
@@ -22,7 +22,7 @@ class ShopVM: Injectable {
 
 extension ShopVM: ViewModelType {
     
-    typealias SelectedProducts = [String: Product]
+    typealias SelectedProducts = Set<Product>
     
     struct Input {
         let selectProduct: Driver<Product>
@@ -44,10 +44,10 @@ extension ShopVM: ViewModelType {
             .map { [unowned self] product -> SelectedProducts in
                 
                 // If product is already added to the shopping cart, tapping it again will remove it from the list
-                if self.selectedProducts[product.id] != nil {
-                    self.selectedProducts.removeValue(forKey: product.id)
+                if self.selectedProducts.contains(product) {
+                    self.selectedProducts.remove(product)
                 } else {
-                    self.selectedProducts[product.id] = product
+                    self.selectedProducts.insert(product)
                 }
                 
                 return self.selectedProducts
@@ -60,14 +60,14 @@ extension ShopVM: ViewModelType {
             .flatMapLatest(purchaseProductsUseCase.execute)
             .map { [weak self] success -> SelectedProducts in
                 guard let self = self else {
-                    return [:]
+                    return []
                 }
                 if success {
                     self.selectedProducts.removeAll()
                 }
                 return self.selectedProducts
             }
-            .asDriver(onErrorJustReturn: [:])
+            .asDriver(onErrorJustReturn: [])
         
         let selectedProductsMerge = Driver.merge(selectedProducts, purchaseResult)
         

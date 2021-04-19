@@ -8,7 +8,7 @@ protocol ShopService: Injectable {
 final class ShopServiceImpl: ShopService {
     
     func getProducts() -> Single<[Product]> {
-        return .just(Fruit.allCases)
+        return .just(Product.allCases)
     }
     
     func purchaseProducts(from shoppingCard: ShoppingCart) -> Single<Bool> {

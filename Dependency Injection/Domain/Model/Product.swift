@@ -1,11 +1,11 @@
-enum Fruit: String, CaseIterable {
+enum Product: String, CaseIterable {
     case apple
     case orange
     case strawberry
     case banana
 }
 
-extension Fruit: Product {
+extension Product {
     
     var id: String {
         self.rawValue

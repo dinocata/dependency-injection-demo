@@ -61,7 +61,7 @@ final class ShopVC: MVVMController<ShopVM> {
                 }
                 
                 cell.configure(with: item)
-                cell.setChecked(self.selectedProducts?[item.id] != nil)
+                cell.setChecked(self.selectedProducts?.contains(item) ?? false)
                 
             }.disposed(by: disposeBag)
         
