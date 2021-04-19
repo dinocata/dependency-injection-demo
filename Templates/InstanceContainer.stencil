@@ -18,7 +18,7 @@ import Swinject
     {% endif %}
 {% endmacro %}
 
-{% macro injectProtocol type %}
+{% macro registerProtocol type %}
         // MARK: {{ type.name }}
         container.register({{ type.name }}.self) { resolver in
     {% for impl in types.implementing[type.name] where impl.name|contains:"Impl" %}
@@ -27,21 +27,21 @@ import Swinject
         }
 {% endmacro %}
 
-{% macro injectClass type %}
+{% macro registerClass type %}
         // MARK: {{ type.name }}
         container.register({{ type.name }}.self) { resolver in
     {% call injectType type %}
         }
 {% endmacro %}
 
-/// Provides new instances
+/// Provides singletons
 enum SingletonContainer {
 
     static let instance: Container = {
         let container = Container(defaultObjectScope: .container)
 
 {% for type in types.protocols where type.based.Injectable and type.based.Singleton %}
-    {% call injectProtocol type %}
+    {% call registerProtocol type %}
 
 {% endfor %}
         return container
@@ -55,14 +55,14 @@ enum InstanceContainer {
         let container = Container(parent: SingletonContainer.instance, defaultObjectScope: .transient)
 
 {% for type in types.protocols where type.based.Injectable and not type.based.Singleton %}
-        {% call injectProtocol type %}
+        {% call registerProtocol type %}
 
 {% endfor %}
 
 {% for type in types.classes where type.based.Injectable and not type.implements.Singleton %}
     {% for inheritedType in type.inheritedTypes %}
         {% if inheritedType == "Injectable" %}
-            {% call injectClass type %}
+            {% call registerClass type %}
         {% endif %}
     {% endfor %}
 {% endfor %}
