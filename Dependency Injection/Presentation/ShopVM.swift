@@ -1,6 +1,6 @@
 import RxCocoa
 
-class ShopVM: Injectable {
+final class ShopVM: Injectable {
     
     // Dependencies
     private let getProductsUseCase: GetProductsUseCase
